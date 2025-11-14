@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        GITHUB_REPO = 'https://github.com/hye-yoen/Docker.git'
+        GITHUB_REPO = 'https://github.com/hye-yoen/DOCKER.git'
         EC2_HOST = '54.180.61.161'  // EC2 인스턴스의 퍼블릭 IP나 DNS
         EC2_USER = 'ec2-user'       // EC2 사용자 이름 (Amazon Linux의 경우 'ec2-user', Ubuntu의 경우 'ubuntu')
     }
@@ -21,7 +21,7 @@ pipeline {
                             git clone \${GITHUB_REPO} && \\
                             
                             # 작업 디렉토리로 이동
-                            cd 15_DOCKER/05_DOCKER_COMPOSE_DEPLOY && \\
+                            cd DOCKER/05_DOCKER_COMPOSE_DEPLOY && \\
                             
                             # Docker 명령어 실행 (sudo 사용)
                             sudo docker-compose down || true && \\
